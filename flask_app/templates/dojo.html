@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %}Home page{% endblock %} {% block
+content %}
+<section class="mt-4">
+	<h1 class="text-center my-2 text-xl font-bold">{{dojo.name}} Ninjas</h1>
+	<table class="table-auto w-full text-center mx-2">
+		<thead class="bg-slate-300 border-slate-100 border-b-2">
+			<tr>
+				<th class="p-3">First Name</th>
+				<th class="p-3">Last Name</th>
+				<th class="p-3">Age</th>
+			</tr>
+		</thead>
+		<tbody class="bg-slate-200">
+			{% for ninja in ninjas %}
+			<tr>
+				<th class="border-slate-100 border-b-2">{{ninja.first_name}}</th>
+				<th class="border-slate-100 border-b-2">{{ninja.last_name}}</th>
+				<th class="border-slate-100 border-b-2">{{ninja.age}}</th>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block title %}New Ninja{% endblock %} {% block
+content %}
+<form class="flex flex-col gap-2 mt-4" action="/ninjas/create" method="POST">
+	<h1 class="text-xl font-bold text-center">New Ninja</h1>
+  <div>
+    <label for="dojo_id">Dojo:</label>
+    <select class="font-semibold border border-gray-200 rounded p-1" name="dojo_id" id="dojo_id">
+      {% for dojo in dojos %}
+      <option class="font-semibold" value="{{dojo.id}}">{{dojo.name}}</option>
+      {% endfor%}
+    </select>
+  </div>
+	<label for="first_name">First Name:</label>
+	<input
+		class="p-1 border border-gray-200 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded"
+		type="text"
+		name="first_name"
+		id="first_name"
+	/>
+	<label for="last_name">Last Name:</label>
+	<input
+		class="p-1 border border-gray-200 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded"
+		type="text"
+		name="last_name"
+		id="last_name"
+	/>
+	<label for="age">Age:</label>
+	<input
+		class="p-1 border border-gray-200 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded"
+		type="text"
+		name="age"
+		id="age"
+	/>
+	<button
+		class="w-full rounded hover:bg-sky-400 transition-all bg-sky-500 p-1 text-white"
+	>
+		Create
+	</button>
+</form>
+{% endblock %}
